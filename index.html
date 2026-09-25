@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IronVision Nexus — Autonomous Agent Toolkit</title>
+<meta name="description" content="Battle-tested autonomous agent scripts, income-automation prompts, and a production dashboard UI kit. Built and stress-tested on real ARM64 Android/Termux hardware.">
+<style>
+:root{--bg:#05010d;--panel:#0d0620;--purple:#b84dff;--cyan:#39d0ff;--green:#00ff9d;--dim:#8b7fb8;--line:#2a1a4a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:#e6e1f5;font-family:'JetBrains Mono','Courier New',monospace;line-height:1.6;overflow-x:hidden}
+canvas{position:fixed;inset:0;z-index:-1;opacity:.35}
+.wrap{max-width:880px;margin:0 auto;padding:32px 20px 80px}
+header{padding:48px 0 24px;border-bottom:1px solid var(--line)}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:2px;color:var(--green);border:1px solid var(--green);border-radius:20px;padding:4px 14px;margin-bottom:18px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+h1{font-size:clamp(26px,6vw,44px);font-weight:700;color:#fff;line-height:1.15}
+h1 span{color:var(--purple)}
+.sub{color:var(--dim);margin-top:14px;font-size:14px;max-width:600px}
+.grid{display:grid;gap:18px;margin-top:40px}
+@media(min-width:680px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;transition:.25s;position:relative;overflow:hidden}
+.card:hover{border-color:var(--purple);transform:translateY(-3px)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--cyan))}
+.card h2{font-size:15px;color:#fff;margin-bottom:10px}
+.card p{font-size:12px;color:var(--dim);flex:1}
+.card ul{list-style:none;margin:12px 0;font-size:11px;color:#b9b0d9}
+.card li::before{content:'▸ ';color:var(--cyan)}
+.buy{display:block;text-align:center;margin-top:16px;padding:12px;background:var(--purple);color:#fff;text-decoration:none;border-radius:8px;font-weight:700;font-size:13px;letter-spacing:1px}
+.buy:hover{background:#9c2fe8}
+.alt{display:block;text-align:center;margin-top:8px;font-size:11px;color:var(--cyan);text-decoration:none}
+.note{margin-top:48px;border:1px solid var(--line);border-radius:12px;padding:20px;font-size:12px;color:var(--dim);background:rgba(184,77,255,.04)}
+.note b{color:var(--cyan)}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:11px;color:#4a4170;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+a.inline{color:var(--cyan)}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+<div class="wrap">
+<header>
+  <div class="tag"><span class="dot"></span>SYSTEMS LIVE — BUILT ON ANDROID/TERMUX</div>
+  <h1>IRONVISION <span>NEXUS</span></h1>
+  <p class="sub">Autonomous agent infrastructure, built and stress-tested on real ARM64 hardware over months of daily iteration. No theory. Every script in these packs survived production failures.</p>
+</header>
+<div class="grid">
+  <div class="card">
+    <h2>AUTONOMOUS AGENT MEGA-PACK</h2>
+    <p>The complete, battle-tested Termux agent stack.</p>
+    <ul><li>Self-healing watchdog patterns</li><li>Zero-dependency node agents</li><li>Auto-deploy to GitHub Pages</li><li>Quoted-heredoc safe templates</li></ul>
+    <a class="buy" href="https://buy.stripe.com/4gM3cv0uX0sieh2d78dwc00">GET THE PACK</a>
+    <a class="alt" href="https://paypal.me/samuelhiotis">pay with PayPal instead</a>
+  </div>
+  <div class="card">
+    <h2>50 INCOME AUTOMATION PROMPTS</h2>
+    <p>Prompts engineered for real revenue workflows, not demos.</p>
+    <ul><li>Affiliate content engines</li><li>Productised service pitches</li><li>Outreach sequencing</li><li>Storefront copy frameworks</li></ul>
+    <a class="buy" href="https://buy.stripe.com/7sI7w1zv5bVXcrCbII">GET THE PROMPTS</a>
+    <a class="alt" href="https://paypal.me/samuelhiotis">pay with PayPal instead</a>
+  </div>
+  <div class="card">
+    <h2>FRACTALMESH UI KIT</h2>
+    <p>Production dark-ops dashboard template. Drop in your APIs, ship.</p>
+    <ul><li>Animated canvas engine</li><li>Live stats polling</li><li>Mobile-first responsive</li><li>Single-file HTML</li></ul>
+    <a class="buy" href="https://buy.stripe.com/9AQeVb7A7aFZc0AaEE">GET THE UI KIT</a>
+    <a class="alt" href="https://paypal.me/samuelhiotis">pay with PayPal instead</a>
+  </div>
+</div>
+<div class="note">
+  <b>DELIVERY:</b> after checkout you receive the full pack by email within 24 hours, from the operator directly. Every purchase funds continued development of the open FractalMesh agent stack.
+  <br><br><b>HONESTY CLAUSE:</b> these packs contain the actual working patterns from a real multi-month build — including the failure modes and their fixes. That documentation alone saves weeks.
+</div>
+<footer>
+  <span>IRONVISION NEXUS · Albury NSW, Australia</span>
+  <span><a class="inline" href="https://dev.to/sam_hiotis_117598dbfa3ac2">build log on dev.to</a></span>
+</footer>
+</div>
+<script>
+const c=document.getElementById('fx'),x=c.getContext('2d');let w,h,p=[];
+function rs(){w=c.width=innerWidth;h=c.height=innerHeight}rs();addEventListener('resize',rs);
+for(let i=0;i<70;i++)p.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4});
+(function f(){x.fillStyle='rgba(5,1,13,.35)';x.fillRect(0,0,w,h);x.fillStyle='#b84dff';
+p.forEach(o=>{o.x+=o.vx;o.y+=o.vy;if(o.x<0||o.x>w)o.vx*=-1;if(o.y<0||o.y>h)o.vy*=-1;x.fillRect(o.x,o.y,2,2)});
+for(let i=0;i<p.length;i++)for(let j=i+1;j<p.length;j++){const a=p[i],b=p[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<120){x.strokeStyle='rgba(57,208,255,'+(0.12*(1-d/120))+')';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}
+requestAnimationFrame(f)})();
+</script>
+</body>
+</html>
